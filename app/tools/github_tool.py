@@ -165,3 +165,4 @@ class GitHubTool:
 
 # Global singleton instance
 github_tool = GitHubTool()
+

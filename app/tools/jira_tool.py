@@ -182,3 +182,4 @@ class JiraTool:
 
 # Global singleton instance
 jira_tool = JiraTool()
+
