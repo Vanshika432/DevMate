@@ -7,7 +7,7 @@ pydantic-settings==2.7.1
 python-dotenv==1.0.1
 
 # AI / LLM Integration (Official Google GenAI SDK - Free Tier)
-google-genai==0.1.1
+google-genai>=0.7.0
 
 # DevOps API Clients
 PyGithub==2.5.0
