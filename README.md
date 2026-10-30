@@ -40,27 +40,38 @@ DevMate/
 
 ## 🛠️ Quick Start
 
-### 1. Clone & Set Up Virtual Environment
+### 1. Run with Docker (Recommended for Production)
+
+```bash
+docker compose up --build
+```
+Open [http://localhost:8501](http://localhost:8501) in your browser.
+
+---
+
+### 2. Run Locally with Python Virtual Environment
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-```
-
-### 2. Configure Environment
-
-Copy `.env.example` to `.env`:
-
-```bash
-cp .env.example .env
-```
-*(By default, `MOCK_MODE=true` is enabled, allowing instant testing without any external accounts.)*
-
-### 3. Run Locally with Streamlit
-
-```bash
 streamlit run app/main.py
 ```
 Open [http://localhost:8501](http://localhost:8501) in your browser.
+
+---
+
+### 3. Run Automated Tests
+
+```bash
+PYTHONPATH=. python3 -m unittest discover tests
+```
+
+---
+
+## 🔄 CI/CD Pipeline
+
+The project includes an enterprise-grade **GitHub Actions CI/CD pipeline** ([`.github/workflows/ci-cd.yml`](.github/workflows/ci-cd.yml)) that automatically triggers on every push and pull request:
+1. **Automated Testing Job**: Sets up Python 3.11 with pip caching and runs all unit tests for Jira, GitHub, and Agent logic.
+2. **Docker Build Job**: Uses Docker Buildx with GitHub Actions Layer Caching to ensure the multi-stage Docker image compiles without errors.
 
