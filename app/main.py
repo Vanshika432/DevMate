@@ -7,9 +7,17 @@ Provides an interactive dashboard and chat experience with:
 - Settings sidebar for toggling Live API vs Mock Mode
 """
 
+import sys
+import os
+from pathlib import Path
+
+# Add project root directory to Python path
+ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
 import streamlit as st
 from typing import Dict, Any, List
-import os
 
 from app.config import settings
 from app.agent import agent
@@ -262,3 +270,4 @@ if user_input:
             if agent_result.get("requires_confirmation"):
                 st.session_state.pending_confirmation = agent_result.get("pending_action")
                 st.rerun()
+
