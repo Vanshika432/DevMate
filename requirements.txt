@@ -1,0 +1,22 @@
+# Web UI
+streamlit==1.42.0
+
+# Core Framework & Configuration
+pydantic==2.10.4
+pydantic-settings==2.7.1
+python-dotenv==1.0.1
+
+# AI / LLM Integration (Official Google GenAI SDK - Free Tier)
+google-genai==0.1.1
+
+# DevOps API Clients
+PyGithub==2.5.0
+jira==3.8.0
+httpx==0.28.1
+
+# Testing & Quality Assurance
+pytest==8.3.4
+pytest-asyncio==0.25.0
+pytest-mock==3.14.0
+pytest-cov==6.0.0
+ruff==0.8.6
